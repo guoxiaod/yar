@@ -77,7 +77,7 @@ static zend_string * php_yar_client_get_full_uri(zval *uri, zend_string * method
 		len = Z_STRLEN_P(uri) + ZSTR_LEN(method) + 1;
 		ret = zend_string_alloc(len, 0);
 		ZSTR_LEN(ret) = len;
-		snprintf(ZSTR_VAL(ret), len, "%Z/%s", uri, ZSTR_VAL(method));
+		snprintf(ZSTR_VAL(ret), len + 1, "%s/%s", Z_STRVAL_P(uri), ZSTR_VAL(method));
 	}
 
 	return ret;
