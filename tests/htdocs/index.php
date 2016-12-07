@@ -10,6 +10,18 @@ class Service_Provider {
         return $version;
     }
 
+    public function useragent($a, $b) {
+        return $_SERVER['HTTP_USER_AGENT'];
+    }
+
+    public function headers($a, $b) {
+        $headers = array(
+            $_SERVER['HTTP_X_UNIQUE_ID'],
+            $_SERVER['HTTP_X_TEST_NAME']
+        );
+        return $headers;
+    }
+
     public function exception() {
         throw new Exception("server exceptin");
     }

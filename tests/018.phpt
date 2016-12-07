@@ -1,5 +1,5 @@
 --TEST--
-Check for yar server info
+Check for yar server info (comment)
 --SKIPIF--
 <?php 
 if (!extension_loaded("yar")) {
@@ -35,7 +35,7 @@ HEADER
 )) {
     while (!feof($fp)) {
         $line = trim(fgets($fp));
-        if (strpos($line, 'Service_Provider - Yar Server') != FALSE) {
+        if (strpos($line, 'param string $version') != FALSE) {
             echo "okey";
             break;
         }   
